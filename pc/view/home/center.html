@@ -1,0 +1,66 @@
+{include file="common/header"/}
+<div class="fly-case-header">
+    <p class="fly-case-year">Don't forget why you started because you went too far</p>
+</div>
+
+<div class="layui-container body-container">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md11 content detail">
+            <div class="demoTable" style="padding-bottom:30px">
+                <form class="layui-form" action="/stock">
+                    <div class="layui-inline" style="width:60%">
+                        <input class="layui-input" name="key" id="key" placeholder="Please enter stock code">
+                    </div>
+                    <button class="layui-btn" id="search">search</button>
+                </form>
+            </div>
+            <fieldset class="layui-elem-field layui-field-title">
+		        <legend>my stock</legend>
+		    </fieldset>
+            <table class="layui-table" lay-even lay-skin="nob">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>code</th>
+                  <th>name</th>
+                  <th>lastestprice</th>
+                  <th>openprice</th>
+                  <th>maxprice</th>
+                  <th>minprice</th>
+                  <th>limit</th>
+                  <th>max52</th>
+                  <th>min52</th>
+                  <th>add time</th>
+                  <!--<th>hold number</th>-->
+                  <!-- <th>record</th> -->
+                </tr> 
+              </thead>
+              <tbody>
+              	{volist name="stock" id="v"}
+	                <tr>
+	                  <td>{$v.id}</td>
+	                  <td>{$v.gid}</td>
+	                  <td>{$v.name}</td>
+	                  <td>{$v.lastestpri}</td>
+	                  <td>{$v.openpri}</td>
+	                  <td>{$v.maxpri}</td>
+	                  <td>{$v.minpri}</td>
+	                  <td>{$v.limit}</td>
+	                  <td>{$v.max52}</td>
+	                  <td>{$v.min52}</td>
+	                  <td>{$v.add_time|date="Y-m-d H:i"}</td>
+	                  
+	                  <!-- <th>look up</th> -->
+	                </tr>
+                {/volist}
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<script>
+    
+</script>
+</body>
+</html>
